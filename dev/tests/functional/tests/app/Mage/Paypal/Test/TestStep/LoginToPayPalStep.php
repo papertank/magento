@@ -110,13 +110,13 @@ class LoginToPayPalStep implements TestStepInterface
     /**
      * Returns actual login block by selector
      *
-     * @return \Mage\Paypal\Test\Block\Login|\Mage\Paypal\Test\Block\OldLogin|\Mage\Paypal\Test\Page\NewLogin
+     * @return \Mage\Paypal\Test\Block\NewLogin|\Mage\Paypal\Test\Block\Login|\Mage\Paypal\Test\Block\OldLogin
      */
     protected function getActualBlock()
     {
-        if ($this->paypalPage->getNewLoginBlock()->isVisible()) {
+        if ($this->paypalPage->getNewLoginBlock()->isBlockActive()) {
             $returnBlock = $this->paypalPage->getNewLoginBlock();
-        } elseif ($this->paypalPage->getLoginBlock()->isVisible()) {
+        } elseif ($this->paypalPage->getLoginBlock()->isBlockActive()) {
             $returnBlock = $this->paypalPage->getLoginBlock();
         } else {
             $returnBlock = $this->paypalPage->getOldLoginBlock();

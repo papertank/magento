@@ -191,7 +191,7 @@ class AssertProductIsPresentOnCustomWebsite extends AbstractConstraint
             ]
         ];
 
-        $fixture = $fixtureFactory->createByCode('configData', ['data' => $data]);
+        $fixture = $fixtureFactory->createByCode('customConfigData', ['data' => $data]);
         $fixture->persist();
     }
 

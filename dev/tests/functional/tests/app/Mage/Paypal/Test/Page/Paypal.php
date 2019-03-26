@@ -71,7 +71,7 @@ class Paypal extends Page
         ],
         'newLoginBlock' => [
             'class' => 'Mage\Paypal\Test\Block\NewLogin',
-            'locator' => '#fullSignup',
+            'locator' => '#login',
             'strategy' => 'css selector',
         ],
     ];

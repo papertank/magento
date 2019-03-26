@@ -30,5 +30,8 @@
         <email>
             <selector>[name='login_email']</selector>
         </email>
+        <password>
+            <selector>[name='login_password']</selector>
+        </password>
     </fields>
 </mapping>

@@ -123,4 +123,18 @@ class Login extends Form
         $this->waitForElementNotVisible($this->loader);
         return parent::fill($customer, $this->switchOnPayPalFrame($element));
     }
+
+    /**
+     * Check is block active
+     *
+     * @return bool
+     */
+    public function isBlockActive()
+    {
+        if ($this->browser->find($this->mapping['password']['selector'])->isVisible()) {
+            return true;
+        }
+
+        return false;
+    }
 }

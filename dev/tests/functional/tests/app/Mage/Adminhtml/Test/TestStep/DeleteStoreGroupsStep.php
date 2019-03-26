@@ -95,7 +95,11 @@ class DeleteStoreGroupsStep implements TestStepInterface
             /** @var StoreGroup $storeGroup */
             $this->storeIndex->getStoreGrid()->openStoreGroupByName($storeGroup->getName());
             $this->editStore->getFormPageActions()->delete();
-            $this->deleteStore->getFormPageActions()->delete();
+            $deleteStoreFormPageActions = $this->deleteStore->getFormPageActions();
+            if ($deleteStoreFormPageActions->isVisible()) {
+                $this->deleteStore->getForm()->fillForm();
+                $deleteStoreFormPageActions->delete();
+            }
         }
     }
 }

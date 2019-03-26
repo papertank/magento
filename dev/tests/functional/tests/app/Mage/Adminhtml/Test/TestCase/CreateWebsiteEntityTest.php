@@ -223,7 +223,11 @@ class CreateWebsiteEntityTest extends Injectable
             $storeGrid = $this->storeIndex->getStoreGrid();
             $storeGrid->openWebsite($this->website->getName());
             $this->editStore->getFormPageActions()->delete();
-            $this->deleteStore->getFormPageActions()->delete();
+            $deleteStoreFormPageActions = $this->deleteStore->getFormPageActions();
+            if ($deleteStoreFormPageActions->isVisible()) {
+                $this->deleteStore->getForm()->fillForm();
+                $deleteStoreFormPageActions->delete();
+            }
         }
     }
 }

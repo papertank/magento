@@ -153,11 +153,19 @@ class CreateStoreGroupEntityTest extends Injectable
         if ($this->storeGroup->getWebsiteId() !== 'Main Website') {
             $this->storeIndex->getStoreGrid()->openWebsite($this->storeGroup->getWebsiteId());
             $this->editStore->getFormPageActions()->delete();
-            $this->deleteStore->getFormPageActions()->delete();
+            $deleteStoreFormPageActions = $this->deleteStore->getFormPageActions();
+            if ($deleteStoreFormPageActions->isVisible()) {
+                $this->deleteStore->getForm()->fillForm();
+                $deleteStoreFormPageActions->delete();
+            }
         } else {
             $this->storeIndex->getStoreGrid()->openStoreGroupByName($this->storeGroup->getName());
             $this->editStore->getFormPageActions()->delete();
-            $this->deleteStore->getFormPageActions()->delete();
+            $deleteStoreFormPageActions = $this->deleteStore->getFormPageActions();
+            if ($deleteStoreFormPageActions->isVisible()) {
+                $this->deleteStore->getForm()->fillForm();
+                $deleteStoreFormPageActions->delete();
+            }
         }
     }
 }

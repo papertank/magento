@@ -29,4 +29,5 @@
     <preference for="Mage\Adminhtml\Test\Handler\StoreGroup\StoreGroupInterface" type="\Mage\Adminhtml\Test\Handler\StoreGroup\Curl" />
     <preference for="Mage\Adminhtml\Test\Handler\Store\StoreInterface" type="\Mage\Adminhtml\Test\Handler\Store\Curl" />
     <preference for="Mage\Adminhtml\Test\Handler\Website\WebsiteInterface" type="\Mage\Adminhtml\Test\Handler\Website\Curl" />
+    <preference for="Mage\Adminhtml\Test\Handler\CustomConfigData\CustomConfigDataInterface" type="\Mage\Adminhtml\Test\Handler\CustomConfigData\Curl" />
 </config>
